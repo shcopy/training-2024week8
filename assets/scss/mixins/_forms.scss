@@ -1,0 +1,120 @@
+/* @mixin input-states(
+  $default-bg,
+  $default-border,
+  $focus-bg: lighten($default-bg, 10%),
+  $focus-border: darken($default-border, 10%),
+  $disabled-bg: lighten($default-bg, 20%),
+  $disabled-border: lighten($default-border, 20%),
+  $color: color-contrast($default-bg)
+) {
+  background-color: $default-bg;
+  border: 1px solid $default-border;
+  color: $color;
+  transition: background-color 0.3s, border-color 0.3s;
+
+  &:focus {
+    background-color: $focus-bg;
+    border-color: $focus-border;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: $disabled-bg;
+    border-color: $disabled-border;
+    color: darken($color, 20%);
+    cursor: not-allowed;
+  }
+} */
+
+ @mixin input-variant2(
+  $background-color,
+  $border-color,
+  $color: color-contrast($background-color),
+
+  $focus-background: lighten($background, 10%),
+  $focus-border: darken($border, 10%),
+  $focus-color: color-contrast($focus-background)
+) {
+  background-color: $background;
+  border: 1px solid $border;
+  color: $color;
+
+  &:focus {
+    background-color: $focus-background;
+    border-color: $focus-border;
+    color: $focus-color;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: lighten($background, 20%);
+    border-color: lighten($border, 20%);
+    color: darken($color, 20%);
+    cursor: not-allowed;
+  }
+} 
+
+/* @mixin input-hover(
+  $hover-bg: #f0f0f0,
+  $hover-border: #bdbdbd,
+  $hover-color: #333
+) {
+  &:hover {
+    background-color: $hover-bg;
+    border-color: $hover-border;
+    color: $hover-color;
+  }
+} */
+
+// scss-docs-start custom-form-control-mixin
+@mixin custom-form-control (
+  $background,
+  $border,
+  $color: color-contrast($background),
+  
+  $hover-background: if($color == $color-contrast-light, shade-color($background, $btn-hover-bg-shade-amount), tint-color($background, $btn-hover-bg-tint-amount)),
+  $hover-border: if($color == $color-contrast-light, shade-color($border, $btn-hover-border-shade-amount), tint-color($border, $btn-hover-border-tint-amount)),
+  $hover-color: color-contrast($hover-background),
+  
+  $active-background: if($color == $color-contrast-light, shade-color($background, $btn-active-bg-shade-amount), tint-color($background, $btn-active-bg-tint-amount)),
+  $active-border: if($color == $color-contrast-light, shade-color($border, $btn-active-border-shade-amount), tint-color($border, $btn-active-border-tint-amount)),
+  $active-color: color-contrast($active-background),
+  
+  $disabled-background: $background,
+  $disabled-border: $border,
+  $disabled-color: color-contrast($disabled-background)
+
+) {
+
+  background-color: $background;
+  border: 1px solid $border;
+  color: $color;
+
+  &:focus {
+    border-color: $focus-border;
+    box-shadow: 0 0 0 0.2rem rgba($focus-border, 0.25);
+    outline: none;
+  }
+  
+  &::placeholder {
+    color: lighten($color, 30%);
+  }
+
+  &:disabled {
+    background-color: lighten($background, 10%);
+    border-color: lighten($border, 20%);
+    color: lighten($color, 20%);
+  }
+}
+
+// scss-docs-end input-variant-mixin
+
+
+// scss-docs-start input-size-mixin
+@mixin input-size($padding-y, $padding-x, $font-size, $border-radius) {
+  --#{$prefix}input-padding-y: #{$padding-y};
+  --#{$prefix}input-padding-x: #{$padding-x};
+  @include rfs($font-size, --#{$prefix}input-font-size);
+  --#{$prefix}input-border-radius: #{$border-radius};
+}
+// scss-docs-end input-size-mixin

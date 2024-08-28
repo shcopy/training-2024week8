@@ -1,125 +1,192 @@
 // -- 設計稿顏色系統 --
-$success:     #2CC585 !default;
-$info:        #4A72FF !default;
-$warning:     #FFB054 !default;
-$danger:      #D65F5F !default;
 
-// primary
-$primary-100: #FFFDF5 !default; 
-$primary-200: #FFFBE5 !default;
-$primary-300: #E8E3DA !default;
-$primary-400: #6E6B67 !default;
+// 主要色 Primary
+// 品牌色，最主要使用
+$primary-10:  #E5F4FF;
+$primary-40:  #99CFFF;
+$primary-60:  #66B1FF;
+$primary-80:  #3F95FF;
+$primary-100: #0068FF;
+$primary-120: #003BB7;
 
-// accent
-$accent-100: #E0EFDE !default;
-$accent-200: #569573 !default;
-$accent-300: #406C55 !default;
+// 語意輔助色 Semantic
+// Success / secondary
+$success-10: #F0FCD1;
+$success-20: #DDFAA5;
+$success-100:#7CD31F;
+$success-120:#48970F;
 
-// neutral
-$gray-100  : #F8F9FA !default;
-$gray-200  : #DEE2E6 !default;
-$gray-300  : #ADB5BD !default;
-$gray-400  : #6C757D !default;
-$gray-500  : #343A40 !default;
-$gray-600  : #212529 !default;
+$secondary-10: #F0FCD1;
+$secondary-20: #DDFAA5;
+$secondary-100:#7CD31F;
+$secondary-120:#48970F;
 
-// ## 全域樣式 
-// - 整體網頁背景色
-$body-bg:                   $primary-100;   
-// - 整體文字顏色
-$body-color:                $gray-500;     
+// Info
+$info-10:    #D4F9FE;
+$info-20:    #A9EFFE;
+$info-100:   #2AAFFC;
+$info-120:   #1566B5;
 
-// - 清除文字標籤下方空間
-$headings-margin-bottom:      0;  // 清除 <h1>~<h6> 標籤文字標籤下方空間
-$paragraph-margin-bottom:     0;    // 清除 <p> 文字標籤下方空間
+// Alert / Error
+$alert-10:   #FFE0D7;
+$alert-20:   #FFBBB0;
+$alert-100:  #FF3A55;
+$alert-120:  #B71D4F;
 
-// - a 標籤文字下方線條
-$link-decoration:                         none;  // a 標籤文字下方線條
+// 中性色 Neutral
+// 文字顏色、系統性 Icon 等。
+$neutral-0:   #FFFFFF !default;
+$neutral-10:  #F9F9F9 !default;
+$neutral-40:  #ECECEC !default;
+$neutral-60:  #909090 !default;
+$neutral-80:  #4B4B4B !default;
+$neutral-100: #000000 !default;
+
+// -------------------------------------------------------
+
+// Body 全域樣式 
+$body-bg:                     $neutral-0;    // - 整體網頁背景色
+$body-color:                  $neutral-100;  // - 整體網頁文字顏色
+
+$paragraph-margin-bottom:     0;  // 清除       <p> 標籤文字下方空間
+
+// - a 清除標籤文字下方線條
+$link-decoration:             none;  // a 標籤文字下方線條
 
 // - 文字
-// 基本字體
-$font-family-sans-serif:    "Noto Serif TC", Rotobo, Arial, sans-serif; 
-$font-family-base:          $font-family-sans-serif;
-
-// 內文字重
-$font-weight-base:            600;
-
-// scss-docs-start font-variables4
+$font-family-sans-serif:      "Poppins", sans-serif; // 基本字體
+$font-weight-base:            400;                   // 內文字重
+$line-height-base:            1.5;                   // <p> 標籤文字內文行高
 
 $font-size-base:              1rem; // Assumes the browser default, typically `16px`
+$h1-font-size:                $font-size-base * 3 ;    // 48px
+$h2-font-size:                $font-size-base * 2.5 ;  // 40px
+$h3-font-size:                $font-size-base * 2;     // 32px
+$h4-font-size:                $font-size-base * 1.75;  // 28px
+$h5-font-size:                $font-size-base * 1.25;  // 24px
+$h6-font-size:                $font-size-base * 1.25;  // 20px
 
-$h1-font-size:                $font-size-base * 2.5;   // 40px
-$h2-font-size:                $font-size-base * 2 ;    // 32px
-$h3-font-size:                $font-size-base * 1.75;  // 28px
-$h4-font-size:                $font-size-base * 1.5;   // 24px
-$h5-font-size:                $font-size-base * 1.25 ; // 20px
-$h6-font-size:                $font-size-base;         // 16px
-$h7-font-size:                $font-size-base * 0.75;  // 12px
-// scss-docs-end font-variables
+// 用於 headings 主標題的變數
+$headings-margin-bottom:      0;  // 清除 <h1>~<h6> headings 主標題標籤文字下方空間
+$headings-font-family:        null;
+$headings-font-style:         null;
+$headings-font-weight:        600;  // <h1>~<h6> headings 主標題標題文字字重
+$headings-line-height:        1.2;  // <h1>~<h6> headings 主標題標籤文字行高
+$headings-color:              inherit;
 
-// 內文行高
-$line-height-base:            1.5;
+// 用於副標題的變數
+$custom-text-subheadings-margin-bottom:   0;     // 清除 subheadings 副標題標籤文字下方空間
+$custom-text-subheadings-font-family:     null;
+$custom-text-subheadings-font-style:      null;
+$custom-text-subheadings-font-weight:     600;  // subheadings 副標題標籤文字字重
+$custom-text-subheadings-line-height:     1.2;  // subheadings 副標題標籤文字行高
+$custom-text-subheadings-color:           inherit;
 
-// 標題字重
-$headings-font-weight:        900;
+// 用於 title 的變數
+$custom-text-titles-margin-bottom:        0;     // 清除 title 副標題標籤文字下方空間
+$custom-text-titles-font-family:          null;
+$custom-text-titles-font-style:           null;
+$custom-text-titles-font-weight:          600;  // title 副標題標籤文字字重
+$custom-text-titles-line-height:          1.2;  // title 副標題標籤文字行高
+$custom-text-titles-color:                inherit;
 
-// 標題行高
-$headings-line-height:        1.2;
+// 內文第二種字體樣式
+$custom-text-secondary-margin-bottom: 0;     // 清除 text-secondary 標籤文字下方空間
+$custom-text-secondary-font-family:   null;
+$custom-text-secondary-font-style:    null;
+$custom-text-secondary-font-weight:   400;  // text-secondary 標籤文字字重
+$custom-text-secondary-line-height:   1.5;  // text-secondary 標籤文字行高
+$custom-text-secondary-color:         inherit;
 
-// ## 修改元件樣式
-// ### Button
-// - 字重
-$btn-font-weight:             700;
-
-// - 文字顏色
-$btn-color:                   $accent-200;
-
-// - 間距
-$btn-padding-y:                .875rem;
-$btn-padding-x:               1.375rem;
-$btn-font-size:               1rem;
-
-$btn-padding-y-sm:              .75rem;
-$btn-padding-x-sm:            1.375rem;
-$btn-font-size-sm:                1rem;
-
-$btn-padding-y-lg:                1rem;
-$btn-padding-x-lg:              1.5rem;
-$btn-font-size-lg:             1.25rem;
-
-// - 圓角
-$btn-border-radius:              50rem;
-
-// - disabled
-$btn-disabled-opacity:               1; 
-
-
-// 表單 Input
-// padding
-$input-btn-padding-y:         .75rem;
-$input-btn-padding-x:         1rem;
+// 用於 tiny-text 的變數
+$custom-text-tiny-margin-bottom:      0;     // 清除 tiny-text 標籤文字下方空間
+$custom-text-tiny-font-family:        null;
+$custom-text-tiny-font-style:         null;
+$custom-text-tiny-font-weight:        400;  // tiny-text 標籤文字字重
+$custom-text-tiny-line-height:        1.5;  // tiny-text 標籤文字行高
+$custom-text-tiny-color:              inherit;
 
 
-// 字重：
-$input-font-weight:           600;
+// -------------------------------------------------------
+// scss-docs-start form-label-variables
+$form-label-margin-bottom:              .5rem;
+$form-label-font-size:                  1rem;
+$form-label-font-style:                 null;
+$form-label-font-weight:                400;
+$form-label-color:                      $neutral-80;
+// scss-docs-end form-label-variables
+// -------------------------------------------------------
+// scss-docs-start form-input-variables
+$input-padding-y:                       1rem;
+$input-padding-x:                       1rem;
+$input-font-family:                     null;
+$input-font-size:                       1rem;
+$input-font-weight:                     400;
+$input-line-height:                     1.5;
 
-// 提示字顏色
-$input-placeholder-color:     $gray-300; 
+// $input-padding-y-sm:                    $input-btn-padding-y-sm;
+// $input-padding-x-sm:                    $input-btn-padding-x-sm;
+// $input-font-size-sm:                    $input-btn-font-size-sm;
 
-// 背景色
-$input-bg:                    $gray-100;
+// $input-padding-y-lg:                    $input-btn-padding-y-lg;
+// $input-padding-x-lg:                    $input-btn-padding-x-lg;
+// $input-font-size-lg:                    $input-btn-font-size-lg;
 
-// 圓角
-$input-border-radius:         0.5rem;
+$input-bg:                                 $neutral-0;
+
+// $input-disabled-color:                  null !default;
+// $input-disabled-bg:                     var(--#{$prefix}secondary-bg) !default;
+// $input-disabled-border-color:           null !default;
+
+$input-color:                              $neutral-80;
+$input-border-color:                       $neutral-40;
+$input-border-width:                       1px;
+// $input-box-shadow:                      var(--#{$prefix}box-shadow-inset)
+
+// $input-border-radius:                   var(--#{$prefix}border-radius);
+// $input-border-radius-sm:                var(--#{$prefix}border-radius-sm);
+// $input-border-radius-lg:                var(--#{$prefix}border-radius-lg);
+
+$input-focus-bg:                        $neutral-0;
+$input-focus-border-color:              $primary-100;
+$input-focus-color:                     $neutral-80;
+$input-focus-width:                     1px;
+$input-focus-box-shadow:                0px 0px 0px 4px rgba(#0068FF, .1);
 
 
+$input-placeholder-color:               $neutral-60;
+// $input-plaintext-color:                 var(--#{$prefix}body-color);
 
+// $input-height-border:                   calc(#{$input-border-width} * 2); // stylelint-disable-line function-disallowed-list
 
-// ### Breadcrumbs
-$breadcrumb-font-size:        1rem;
-$breadcrumb-active-color:     $accent-200;
-$breadcrumb-margin-bottom:    1.25rem;
-// scss-docs-start form-check-variables
-$form-check-input-checked-color:          #FFFFFF;
-$form-check-input-checked-bg-color:       $accent-300;
-// scss-docs-end form-check-variables
+// $input-height-inner:                    add($input-line-height * 1em, $input-padding-y * 2);
+// $input-height-inner-half:               add($input-line-height * .5em, $input-padding-y);
+// $input-height-inner-quarter:            add($input-line-height * .25em, $input-padding-y * .5);
+
+// $input-height:                          add($input-line-height * 1em, add($input-padding-y * 2, $input-height-border, false));
+// $input-height-sm:                       add($input-line-height * 1em, add($input-padding-y-sm * 2, $input-height-border, false));
+// $input-height-lg:                       add($input-line-height * 1em, add($input-padding-y-lg * 2, $input-height-border, false));
+
+// $input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+// $form-color-width:                      3rem;
+// scss-docs-end form-input-variables
+// -------------------------------------------------------
+
+// -------------------------------------------------------
+
+// -------------------------------------------------------
+
+// -------------------------------------------------------
+
+// -------------------------------------------------------
+
+// -------------------------------------------------------
+
+// -------------------------------------------------------
+
+// -------------------------------------------------------
+
+// -------------------------------------------------------
+
+// -------------------------------------------------------

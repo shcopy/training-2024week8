@@ -1,14 +1,128 @@
-.footer{
+.footer {
+  background-color: #282828;
+  border-top-left-radius: 80px; /* 左上圓角 */
+  border-top-right-radius: 80px; /* 右上圓角 */
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-right: 12px;
+  padding-left: 12px;
 
-}
+  .footer-inner {
+    // border-top: 1px solid $gray-300 !important;
+  }
 
-.footer-inner {
-  padding-top: 26px;
-  padding-bottom: 26px;
+  /** start of navbar **/
+  .navbar-nav {
+		display: flex !important;
+		flex-direction: column !important;
+	}
 
-  border-top: 1px solid $gray-300 !important;
-}
+	.navbar-item {
+		width: auto !important;
+		margin-top: 12px !important;
+		margin-bottom: 12px !important;
+	}
 
-.footer-inner p {
+  /** 選單的最左邊及最右邊距離歸零 **/
+  .navbar-item:first-child {
+    // margin-top: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .navbar-item:last-child {
+    // margin-right: 0 !important;
+    margin-bottom: 0 !important;
+  }
+ 
+	.navbar-link {
+		display: block !important;
+    color: $white !important;
+		font-size: 16px !important;
+    font-weight: 500 !important;
+	}
+
+	.navbar-link:hover {
+		color: $white !important;
+    // background-color: $accent-200 !important;
+	}
+
+  .navbar-link:active, .navbar-link.active {
+		color: $white !important;
+	}
+
+  // min-width: 576px
+  @include media-breakpoint-up(sm) {}
+
+  // min-width: 768px
+  @include media-breakpoint-up(md) {}
+
+  // min-width: 992px
+  @include media-breakpoint-up(lg) {
+    .navbar-nav {
+      display: flex !important;
+      flex-direction: row !important;
+    }
+  
+    .navbar-item {
+      width: auto !important;
+      margin-left: 16px !important;
+      margin-right: 16px !important;
+    }
+
+    /** 選單的最左邊及最右邊距離歸零 **/
+    .navbar-item:first-child {
+      margin-left: 0 !important;
+    }
+
+    .navbar-item:last-child {
+      margin-right: 0 !important;
+    }
+  }
+  /** end of navbar **/
+
+  /** start of socialbar**/
+  .socialbar-nav {
+		display: flex !important;
+		flex-direction: row !important;
+	}
+
+	.socialbar-item {
+		width: auto !important;
+		margin-left: 8px !important;
+		margin-right: 8px !important;
+	}
+
+	/** 選單的最左邊及最右邊距離歸零 **/
+	.socialbar-item:first-child {
+		margin-left: 0 !important;
+	}
+
+	.socialbar-item:last-child {
+    margin-right: 0 !important;
+	}
+
+	.socialbar-link {
+		display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* 圓的寬度 */
+    height: 40px; /* 圓的高度 */
+    border-radius: 50%; /* 圓形 */
+    border: 1px solid $neutral-0; /* 白色圓線 */
+    color: $neutral-0; /* 圖示顏色 */
+    text-decoration: none; /* 移除連結下劃線 */
+    transition: background-color 0.3s, color 0.3s; /* 過渡效果 */
+	}
+
+	.socialbar-link:hover {
+		color: $white !important;
+    // background-color: $accent-200 !important;
+	}
+
+  .socialbar-link:active, .socialbar-link.active {
+		color: $white !important;
+	}
+  /** end of socialbar **/
+
 
 }

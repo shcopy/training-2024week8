@@ -1,0 +1,52 @@
+// Define your custom button style using the mixin
+
+/*
+@mixin button-size($padding-y, $padding-x, $font-size, $border-radius) 
+*/
+
+// Define a button size using the mixin
+.btn {
+    // Example values: padding-y, padding-x, font-size, border-radius
+    @include button-size(1rem, 2rem, 1rem, 0.75rem); 
+}
+  
+.btn-small {
+    // Example values: padding-y, padding-x, font-size, border-radius
+    @include button-size(0.75rem, 1rem, 1rem, 0.75rem);
+}
+
+/*
+@mixin button-variant(
+  $background,
+  $border,
+  $color: color-contrast($background),
+  $hover-background: if($color == $color-contrast-light, shade-color($background, $btn-hover-bg-shade-amount), tint-color($background, $btn-hover-bg-tint-amount)),
+  $hover-border: if($color == $color-contrast-light, shade-color($border, $btn-hover-border-shade-amount), tint-color($border, $btn-hover-border-tint-amount)),
+  $hover-color: color-contrast($hover-background),
+  $active-background: if($color == $color-contrast-light, shade-color($background, $btn-active-bg-shade-amount), tint-color($background, $btn-active-bg-tint-amount)),
+  $active-border: if($color == $color-contrast-light, shade-color($border, $btn-active-border-shade-amount), tint-color($border, $btn-active-border-tint-amount)),
+  $active-color: color-contrast($active-background),
+  $disabled-background: $background,
+  $disabled-border: $border,
+  $disabled-color: color-contrast($disabled-background)
+)
+*/
+  
+.btn-custom-primary {
+    @include button-variant($primary-100, $primary-100, $white, $primary-120, $primary-120, $white, $primary-120, $primary-120, $white, $neutral-40, $neutral-40, $neutral-60); 
+}
+
+/*
+@mixin button-outline-variant(
+  $color,
+  $color-hover: color-contrast($color),
+  $active-background: $color,
+  $active-border: $color,
+  $active-color: color-contrast($active-background)
+) 
+*/
+
+.btn-custom-secondary {
+    // @include button-variant(#007bff, #007bff); // Using blue as the background and border color
+    @include button-outline-variant($primary-100, $white, $primary-100, $primary-100, $neutral-0); 
+}

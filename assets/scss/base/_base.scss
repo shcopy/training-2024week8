@@ -1,6 +1,6 @@
 /* 版面除錯用 */
 * {
-	// outline: 2px dotted green;
+	outline: 2px dotted green;
 }
 
 /* img {
@@ -19,15 +19,77 @@ h3,
 h4,
 h5,
 h6 {
-  letter-spacing: 0.1em;
+  //letter-spacing: $font-size-base * 1.2;
 }
 
 p {
-  letter-spacing: 0.05em;
+  letter-spacing: $font-size-base * .02;
 }
 
- ul, li {
+ul {
   list-style: none;
   margin: 0;
   padding: 0;
 } 
+
+
+%custom-text-title {
+  margin-top: 0; // 1
+  margin-bottom: $custom-text-titles-margin-bottom;
+  font-family: $custom-text-titles-font-family;
+  font-style: $custom-text-titles-font-style;
+  font-weight: $custom-text-titles-font-weight;
+  line-height: $custom-text-titles-line-height;
+  color: var(--#{$prefix}custom-text-titles-color);
+}
+
+.custom-text-title {
+  @extend %custom-text-title;
+  @include font-size($font-size-base);
+}
+
+%custom-text-subheading {
+  margin-top: 0; // 1
+  margin-bottom: $custom-text-subheadings-margin-bottom;
+  font-family: $custom-text-subheadings-font-family;
+  font-style: $custom-text-subheadings-font-style;
+  font-weight: $custom-text-subheadings-font-weight;
+  line-height: $custom-text-subheadings-line-height;
+  color: var(--#{$prefix}custom-text-subheadings-color);
+}
+
+.custom-text-subtitle {
+  @extend %custom-text-subheading;
+  @include font-size($font-size-base * .875);
+}
+
+// 內文第二種字體樣式
+%custom-text-secondarys {
+  margin-top: 0; // 1
+  margin-bottom: $custom-text-secondary-margin-bottom;
+  font-family: $custom-text-secondary-font-family;
+  font-style: $custom-text-secondary-font-style;
+  font-weight: $custom-text-secondary-font-weight;
+  line-height: $custom-text-secondary-line-height;
+  color: var(--#{$prefix}custom-text-secondary-color);
+}
+
+.custom-text-secondary  {
+  @extend %custom-text-secondarys ;
+  @include font-size($font-size-base * .875);
+}
+
+%custom-text-tinys {
+  margin-top: 0; // 1
+  margin-bottom: $custom-text-tiny-margin-bottom;
+  font-family: $custom-text-tiny-font-family;
+  font-style: $custom-text-tiny-font-style;
+  font-weight: $custom-text-tiny-font-weight;
+  line-height: $custom-text-tiny-line-height;
+  color: var(--#{$prefix}custom-text-tiny-color);
+}
+
+.custom-text-tiny {
+  @extend %custom-text-tinys;
+  @include font-size($font-size-base * .875);
+}
